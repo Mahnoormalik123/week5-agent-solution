@@ -17,9 +17,6 @@ Students often have long lecture notes and struggle to quickly find answers. Thi
    calculate("23*45")
    ask_ai("Explain gradient descent")
 
-## Demo Video
-Record 5–7 min video as per assignment guidelines
-
 ## Future Improvements
 - Stronger models
 - Web UI
