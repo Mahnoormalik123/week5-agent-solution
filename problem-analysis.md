@@ -1,29 +1,30 @@
 # Problem Analysis
 
-## Problem Identification
-Students often struggle with managing and retrieving information from large sets of lecture notes, assignments, and research materials. Searching manually consumes time and reduces productivity, especially when deadlines are close.
+The task is to design and implement an **AI-powered Question Answering System** that can read user-provided documents, process the text, and provide relevant answers to user queries. The system must combine **text retrieval** and **natural language generation**.
 
-## Target Users
-- University students preparing for exams or assignments
-- Researchers who need quick fact-checking from long documents
-- Professionals handling long technical documents
+## Problem Statement
+Students and professionals often need to search through large documents to find specific answers. Manually searching is time-consuming and inefficient. A tool is required that:
+- Automatically reads the given text/document,
+- Finds the most relevant sections based on the user’s question,
+- Generates a simple, clear answer.
 
-## Current Challenges
-1. Manual searching is time-consuming and inefficient.
-2. Existing solutions (like Ctrl+F) are limited and only match keywords, not context.
-3. Lack of integration with productivity tools such as calculators or simple automation.
-4. Students want user-friendly systems without paid APIs (like OpenAI).
+## Objectives
+1. Load textual data from user-provided files (e.g., `.txt`).
+2. Break the document into meaningful chunks for efficient searching.
+3. Use embedding models to represent chunks and queries in vector space.
+4. Perform similarity search to retrieve top relevant chunks.
+5. Use a language model to generate concise answers using the retrieved context.
+6. Provide fallback or error handling if the model cannot find an answer.
 
-## Proposed Solution
-A **Document Q&A Assistant** built with LlamaIndex/HuggingFace:
-- Reads uploaded `.txt` lecture notes or reports.
-- Lets users ask questions in natural language.
-- Retrieves the most relevant chunk of text using embeddings.
-- Generates a simple, clear answer using a local HuggingFace model (no paid API).
-- Provides an integrated calculator for quick math queries.
+## Scope
+- Input: Text documents (e.g., `.txt`, `.docx`).
+- Output: Direct and concise answers to user queries.
+- Target Users: Students, researchers, or anyone who wants quick answers from their notes or documents.
+- Exclusions: The system does not guarantee 100% accuracy. It is not designed for real-time multi-document search at large scale.
 
-## Success Criteria
--  Accurate answers from lecture notes.
--  Safe local calculator tool for math.
--  Easy to run on Google Colab without paid APIs.
--  Structured repository with documentation and demo.
+## Challenges
+- Handling long documents (may exceed model token limits).
+- Ensuring the embeddings capture context properly.
+- Avoiding irrelevant or hallucinated responses.
+- Managing external library compatibility issues (e.g., LlamaIndex vs. manual retrieval).
+
