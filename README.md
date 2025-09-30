@@ -24,13 +24,14 @@ cd AI-Document-QA
 pip install -r requirements.txt
 ```
 
-## Usage
+
 ## Usage
 1. Put your documents (e.g., my_notes.txt, my_doc.docx) in the `data/` folder.
 2. Run the system locally:
 
 ```bash
 python src/main.py
+``` 
 3. Ask questions or perform calculations:
 
 print(ask_ai("What is artificial intelligence?"))
