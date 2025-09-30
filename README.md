@@ -10,6 +10,8 @@ This project implements a simple **Question Answering (QA) system** that allows 
 - Uses embeddings + cosine similarity for retrieval.
 - Generates concise answers with a text generation model.
 - Provides fallback if no answer is found.
+- Modular calculator tool via `custom_tool.py`.
+- Supports `.txt` and `.docx` documents.
 
 ---
 
@@ -23,24 +25,37 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-1. Upload your document (e.g., my_notes.txt) in Colab or local environment.
+## Usage
+1. Put your documents (e.g., my_notes.txt, my_doc.docx) in the `data/` folder.
+2. Run the system locally:
 
-2. Open and run the notebook.ipynb.
-
-3. Ask questions like:
+```bash
+python src/main.py
+3. Ask questions or perform calculations:
 
 print(ask_ai("What is artificial intelligence?"))
 print(ask_ai("Explain gradient descent."))
 
-## Repository Structure:
-AI-Document-QA/
-│
-├── notebook.ipynb          # Main notebook with code
-├── my_notes.txt            # Sample input document
-├── problem-analysis.md     # Problem statement and analysis
-├── architecture.md         # System design and architecture
-├── README.md               # Project documentation
-└── requirements.txt        # Dependencies
+Ask your question: 23*45
+Answer: Calculator: 1035
+
+## Repository Structure
+week5-agent-solution/
+├── README.md
+├── requirements.txt
+├── .env.example
+├── src/
+│   ├── main.py
+│   ├── agent.py
+│   └── tools/
+│       └── custom_tool.py
+├── data/                  # Put your documents here
+├── docs/
+│   ├── problem-analysis.md
+│   ├── architecture.md
+├── tests/
+└── screenshots/
+
 
 ## Example
 - **Question:** What is artificial intelligence?
